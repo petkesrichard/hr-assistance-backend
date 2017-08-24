@@ -1,0 +1,26 @@
+{
+  "name": "arobs-hr-backend",
+  "version": "1.0.0",
+  "description": "RESTful API with NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fodorandras@bitbucket.org/fodorandras/arobs-hr-backend.git"
+  },
+  "author": "andras.fodor",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/fodorandras/arobs-hr-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-validator": "^3.2.1",
+    "method-override": "^2.3.9",
+    "mysql2": "^1.4.1",
+    "nodemon": "^1.11.0",
+    "sequelize": "^4.6.0"
+  }
+}

@@ -1,0 +1,19 @@
+module.exports = {
+    port: 8081,
+    hostname: '0.0.0.0',
+    baseUrl: 'http://localhost:8081',
+    app: {
+        name: 'Arobs HR assistance'
+    },
+    serveStatic: true,
+    proxy: {
+        trust: true
+    },
+    mysql: {
+        host     : 'localhost',
+        user     : 'root',
+        password : 'ddc9e55b',
+        database : 'mydb',
+        name     : 'mysql'
+    }
+};
