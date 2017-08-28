@@ -1,8 +1,9 @@
 var Sequelize = require('sequelize');
 var sequelize = require('../../config/sequelize').init(null);
-
-var Users = require('../users/model');
 var Skills = require('../skills/model');
+var Education = require('../../modules/user_education/model');
+var Experience = require('../../modules/user_work_experience/model');
+
 
 var PersonalInfo = sequelize.define("UserRoles",
     {
@@ -21,15 +22,45 @@ var PersonalInfo = sequelize.define("UserRoles",
     }
 );
 
-PersonalInfo.belongsTo(Users, {
-    foreignKey: 'users_id'
-});
-PersonalInfo.belongsToMany(Skills, {
-    through: 'user_skills',
-    foreignKey: 'personal_info_id',
-});
-Skills.belongsToMany(PersonalInfo, {
-    through: 'user_skills',
-    foreignKey: 'id'
+
+PersonalInfo.hasMany(Education, {
+    foreignKey: {
+        field: 'personal_info_id'
+    },
+    onDelete: 'cascade',
+    onUpdate: 'cascade',
 });
 
+PersonalInfo.hasMany(Experience, {
+    foreignKey: {
+        field: 'personal_info_id'
+    },
+    onDelete: 'cascade',
+    onUpdate: 'cascade',
+});
+
+PersonalInfo.belongsToMany(Skills, {
+    through: {
+        model: 'user_skills',
+    },
+    foreignKey: {
+        name: 'personalInfoId',
+        field: 'personal_info_id'
+    },
+    primaryKey: 'id',
+    onDelete: 'cascade',
+    onUpdate: 'cascade'
+});
+
+Skills.belongsToMany(PersonalInfo, {
+    through: {
+        model: 'user_skills',
+    },
+    foreignKey: {
+        field: 'skill_id'
+    },
+    onDelete: 'cascade',
+    onUpdate: 'cascade'
+});
+
+module.exports = PersonalInfo;

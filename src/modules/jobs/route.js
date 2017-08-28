@@ -18,7 +18,7 @@ let router = function() {
                             succes : false,
                             data : error.toString()
                         })
-                });
+                })
         })
         .post((req, res) => {
             console.log(">>>>>>>>>> Req <<<<<<<<<<<<", req.body);

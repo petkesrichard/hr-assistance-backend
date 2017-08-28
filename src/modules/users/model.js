@@ -15,13 +15,11 @@ var Users = sequelize.define("Users", {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            last_login: {
-                type: Sequelize.DATE
-            },
 });
 
 Users.belongsTo(UserRoles,{
-            foreignKey: 'user_roles_id'
+        foreignKey: 'user_roles_id',
+        targetKey: 'id',
 })
 
 module.exports = Users;

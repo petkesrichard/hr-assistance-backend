@@ -42,13 +42,18 @@ let router = function () {
                     res.json(err);
                 });
         })
-        .delete((res, req) => {
+        .delete((req, res) => {
             usersController.deleteById(req.params.id)
                 .then((data) => {
-                    res.json(data);
+                    succes: true,
+                        res.json(data);
                 })
-                .catch((err) => {
-                    res.json(err);
+                .catch((error) => {
+                    res.status(404),
+                        res.json({
+                            succes: false,
+                            data: error
+                        })
                 });
         });
 
