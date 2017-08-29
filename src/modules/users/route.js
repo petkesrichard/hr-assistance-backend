@@ -22,7 +22,7 @@ let router = function () {
                     res.json({succes: false, error: err});
                 });
         });
-
+    
     usersRouter.route('/:id')
         .get((req, res) => {
             usersController.getById(req.params.id)

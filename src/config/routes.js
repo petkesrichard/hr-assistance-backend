@@ -10,4 +10,5 @@ function initRoutes(app) {
     app.use('/user_roles',require(ROUTES_PATH + 'user_roles/route'));
     app.use('/skills',require(ROUTES_PATH + 'skills/route'));
     app.use('/jobs',require(ROUTES_PATH + 'jobs/route'));
+    app.use('/login',require(ROUTES_PATH + 'login/route'));
 }
