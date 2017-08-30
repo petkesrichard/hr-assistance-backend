@@ -10,6 +10,8 @@ function create(user) {
 }
 
 
+
+
 function getAll() {
     return User.findAll({
         attributes: {

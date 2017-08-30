@@ -4,7 +4,7 @@ var skillsController = require('./controller');
 
 
 let router = function() {
-
+    console.log("INSIDE SKILLS");
     skillsRouter.route('/')
         .get((req,res) => {
             skillsController.getAll()

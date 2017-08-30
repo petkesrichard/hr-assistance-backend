@@ -1,7 +1,7 @@
 var Sequelize = require('sequelize');
 var sequelize = require('../../config/sequelize').init(null);
 
-    var UserRoles = sequelize.define("User_Roles",
+    var User_Roles = sequelize.define("User_Roles",
         {
             code: {
                 type: Sequelize.STRING,
@@ -11,4 +11,4 @@ var sequelize = require('../../config/sequelize').init(null);
             }
         });
 
-module.exports = UserRoles;
+module.exports = User_Roles;

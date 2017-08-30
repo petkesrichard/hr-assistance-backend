@@ -1,20 +1,20 @@
 var Sequelize = require('sequelize');
 var sequelize = require('../../config/sequelize').init(null);
 
-var PersonalInfo = require('../personal_info/model');
 
-var UserEducation  = sequelize.define("UserEducation",{
+var UserEducation  = sequelize.define("User_Education",{
     school_name: {
-        type: sequelize.STRING,
+        type: Sequelize.STRING,
     },
     graduated_year: {
-        type: sequelize.DATE
+        type: Sequelize.DATE
     },
     description: {
-        type: sequelize.STRING
+        type: Sequelize.STRING
     },
+    personal_info_id: {
+        type: Sequelize.INTEGER
+    }
 });
 
-UserEducation.belongsTo(PersonalInfo, {
-    foreignKey: 'personal_info_id'
-})
+module.exports = UserEducation;

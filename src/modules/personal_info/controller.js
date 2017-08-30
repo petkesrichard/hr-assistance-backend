@@ -32,6 +32,14 @@ function getPersonalInfoById(id) {
     });
 }
 
+function getPersonalInfoByUserID(id) {
+    return PersonalInfo.findOne({
+        where  :{
+            users_id : id
+        }
+    })
+}
+
 function getAllPersonalInfoById(id) {
     return PersonalInfo.findById(id, {
 
@@ -82,3 +90,4 @@ module.exports.getPersonalInfoById = getPersonalInfoById;
 module.exports.getAllPersonalInfoById = getAllPersonalInfoById;
 module.exports.editPersonalInfo = editPersonalInfo;
 module.exports.deletePersonalInfo = deletePersonalInfo;
+module.exports.getPersonalInfoByUserID = getPersonalInfoByUserID;

@@ -5,21 +5,19 @@ var sequelize = require('../../config/sequelize').init(null);
 
 var PersonalInfo = require('../personal_info/model');
 
-var UserWorkExperience = sequelize.define("UserWorkExperience",{
+var UserWorkExperience = sequelize.define("User_Work_Experience",{
     company_name: {
-        type: sequelize.TEXT
+        type: Sequelize.STRING,
     },
     position: {
-        type: sequelize.TEXT
+        type: Sequelize.STRING
     },
     start_date: {
-        type: sequelize.DATE
+        type: Sequelize.DATE
     },
     end_date: {
-        type: sequelize.DATE
+        type: Sequelize.DATE
     }
 });
 
-UserWorkExperience.belongsTo(PersonalInfo, {
-    foreignKey: 'personal_info_id'
-})
+module.exports = UserWorkExperience;

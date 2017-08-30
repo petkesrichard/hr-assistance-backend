@@ -81,6 +81,25 @@ let router = function (connection) {
                 })
         });
 
+    persInfoRouter.route('/user/:id')
+        .get(function (req, res) {
+            let persInfId = req.params.id;
+            persInfoCtrl.getPersonalInfoByUserID(persInfId)
+                .then((result) => {
+                    res.json({
+                        success: true,
+                        data: result
+                    });
+                })
+                .catch(function (error) {
+                    res.status(400);
+                    res.json({
+                        success: false,
+                        data: error.toString()
+                    })
+                })
+        });
+
     persInfoRouter.route('/:id')
         .delete(function (req, res) {
             let userId = req.params.id;
@@ -125,4 +144,4 @@ let router = function (connection) {
 
 };
 
-module.exports = router;
+module.exports = router();

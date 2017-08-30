@@ -2,8 +2,8 @@
 
 var Sequelize = require('sequelize');
 var sequelize = require('../../config/sequelize').init(null);
-var UserRoles = require('../user_roles/model');
-
+var User_Roles = require('../user_roles/model');
+var PersonalInfo = require('../personal_info/model');
 
 var Users = sequelize.define("Users", {
             username: {
@@ -17,9 +17,32 @@ var Users = sequelize.define("Users", {
             },
 });
 
-Users.belongsTo(UserRoles,{
-        foreignKey: 'user_roles_id',
-        targetKey: 'id',
-})
+Users.belongsTo(User_Roles,{
+    foreignKey: {
+        name: 'user_roles_id',
+        field: 'user_roles_id'
+    },
+    onDelete: 'cascade',
+    onUpdate: 'cascade'
+});
+
+Users.hasOne(PersonalInfo, {
+    foreignKey: {
+        name: 'users_id',
+        field: 'users_id'
+    },
+    onDelete: 'cascade',
+    onUpdate: 'cascade'
+});
+
+PersonalInfo.belongsTo(Users, {
+    foreignKey: {
+        name: 'users_id',
+        field: 'users_id'
+    },
+    onDelete: 'cascade',
+    onUpdate: 'cascade'
+});
 
 module.exports = Users;
+

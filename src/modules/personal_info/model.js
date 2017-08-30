@@ -5,7 +5,7 @@ var Education = require('../../modules/user_education/model');
 var Experience = require('../../modules/user_work_experience/model');
 
 
-var PersonalInfo = sequelize.define("UserRoles",
+var PersonalInfo = sequelize.define("Personal_Info",
     {
         first_name: {
             type: Sequelize.STRING,
