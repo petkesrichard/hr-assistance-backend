@@ -12,7 +12,7 @@ var UserEducation  = sequelize.define("User_Education",{
     description: {
         type: Sequelize.STRING
     },
-    personal_info_id: {
+    personal_info_id : {
         type: Sequelize.INTEGER
     }
 });
