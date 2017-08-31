@@ -19,5 +19,6 @@ function initRoutes(app) {
     app.use('/personal_info',require(ROUTES_PATH + 'personal_info/route'));
     app.use('/user_experience',require(ROUTES_PATH + 'user_work_experience/route'));
     app.use('/user_skills',require(ROUTES_PATH + 'user_skills/route'));
+    app.use('/job_applies',require(ROUTES_PATH + 'job_apply/route'));
     //app.use('/user_education',EducationRoute);
 }
