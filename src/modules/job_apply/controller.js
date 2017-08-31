@@ -11,8 +11,6 @@ function getUserApplyById(jobId) {
             jobs_id: jobId
         },
         include: Users
-
-
     })
 }
 

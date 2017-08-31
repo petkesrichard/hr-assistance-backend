@@ -67,10 +67,7 @@ function editPersonalInfo(persInf, userId) {
         {
             where: {
                 id: userId
-            },
-            include: [{
-                model: User
-            }]
+            }
         });
 }
 

@@ -9,19 +9,15 @@ var PersonalInfo = sequelize.define("Personal_Info",
     {
         first_name: {
             type: Sequelize.STRING,
-            allowNull: false,
         },
         last_name: {
             type: Sequelize.STRING,
-            allowNull: false,
         },
         description: {
             type: Sequelize.STRING,
         },
-
     }
 );
-
 
 PersonalInfo.hasMany(Education, {
     foreignKey: {

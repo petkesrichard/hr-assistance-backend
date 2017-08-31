@@ -14,7 +14,7 @@ let router = function () {
                 });
         })
         .post((req, res) => {
-            usersController.create(req.body)
+            usersController.createUser(req.body)
                 .then((data) => {
                     res.json(data);
                 })

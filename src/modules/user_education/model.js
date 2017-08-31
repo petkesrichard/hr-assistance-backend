@@ -7,7 +7,7 @@ var UserEducation  = sequelize.define("User_Education",{
         type: Sequelize.STRING,
     },
     graduated_year: {
-        type: Sequelize.DATE
+        type: Sequelize.INTEGER
     },
     description: {
         type: Sequelize.STRING
